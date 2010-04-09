@@ -1,4 +1,22 @@
 <web-app xmlns='http://java.sun.com/xml/ns/javaee' version='2.5'>
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/admin</url-pattern>
+      <url-pattern>/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-constraint>
+    <web-resource-collection>
+      <url-pattern>/user</url-pattern>
+      <url-pattern>/user/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>*</role-name>
+    </auth-constraint>
+  </security-constraint>
   <context-param>
     <param-name>rackup</param-name>
     <param-value>
