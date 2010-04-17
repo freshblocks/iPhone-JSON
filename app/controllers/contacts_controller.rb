@@ -8,39 +8,33 @@ class ContactsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @contacts }
-      format.json { render :json => @contacts.to_json }
+      format.json { render :json => @contacts }
     end
   end
 
   # GET /contacts/1
   # GET /contacts/1.xml
+  # GET /contacts/1.json
   def show
     @contact = Contact.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @contact }
-      format.json { render :json => @contact.to_json }
+      format.json { render :json => @contact }
     end
   end
-  
-=begin
-  get '/raw/jsontest' do
-      #content_type :json
-      content_type 'text/plain'
-      @myentries = Entry.all
-      @myentries.to_json(:methods => [:credits,:debits])
-  end
-=end
 
   # GET /contacts/new
   # GET /contacts/new.xml
+  # GET /contacts/new.json
   def new
     @contact = Contact.new
 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @contact }
+      format.json { render :json => @contact }
     end
   end
 
@@ -51,6 +45,7 @@ class ContactsController < ApplicationController
 
   # POST /contacts
   # POST /contacts.xml
+  # POST /contacts.json
   def create
     @contact = Contact.new(params[:contact])
 
@@ -59,15 +54,18 @@ class ContactsController < ApplicationController
         flash[:notice] = 'Contact was successfully created.'
         format.html { redirect_to(@contact) }
         format.xml  { render :xml => @contact, :status => :created, :location => @contact }
+        format.json { render :json => @contact, :status => :created, :location => @contact }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
+        format.json { render :json => @contact.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /contacts/1
   # PUT /contacts/1.xml
+  # PUT /contacts/1.json
   def update
     @contact = Contact.find(params[:id])
 
@@ -76,9 +74,11 @@ class ContactsController < ApplicationController
         flash[:notice] = 'Contact was successfully updated.'
         format.html { redirect_to(@contact) }
         format.xml  { head :ok }
+        format.json { head :ok }
       else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @contact.errors, :status => :unprocessable_entity }
+        format.json { render :json => @contact.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -92,6 +92,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(contacts_url) }
       format.xml  { head :ok }
+      format.json { head :ok }
     end
   end
 end
