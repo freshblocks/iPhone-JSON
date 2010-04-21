@@ -206,33 +206,36 @@
     <div id="page">
       <div id="sidebar">
         <ul id="sidebar-items">
+
           <li>
-            <form id="search" action="http://www.google.com/search" method="get">
-              <input type="hidden" name="hl" value="en" />
-              <input type="text" id="search-text" name="q" value="site:rubyonrails.org " />
-              <input type="submit" value="Search" /> the Rails site
-            </form>
-          </li>
-        
+              <h3>This App</h3>
+              <ul class="links">
+                <li><a href="/contacts">Contacts</a></li>
+                <li><a href="http://github.com/freshblocks/iPhone-JSON">Github Source</a></li>
+                <li><a href="http://github.com/freshblocks/iPhone-JSON-Client">Github - iPhone Client Source</a></li>
+              </ul>
+            </li>
+            
           <li>
             <h3>Join the community</h3>
             <ul class="links">
-              <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
-              <li><a href="http://weblog.rubyonrails.org/">Official weblog</a></li>
-              <li><a href="http://wiki.rubyonrails.org/">Wiki</a></li>
+              <li><a href="http://rails-depot.appspot.com/">Rails Primer for Google App Engine with JRuby</a></li>
+              <li><a href="http://gist.github.com/268192">Gist: Rails 2.3.5 on App Engine (DataMapper)</a></li>
+              <li><a href="http://groups.google.com/group/appengine-jruby">Google Group: Google App Engine API Wrappers for JRuby</a></li>
+              <li><a href="http://code.google.com/p/appengine-jruby/">Google Project: JRuby on Google App Engine</a></li>
+              <li><a href="http://jruby-appengine.blogspot.com/">JRuby on App Engine Blog</a></li>
             </ul>
           </li>
           
-          <li>
-            <h3>Browse the documentation</h3>
-            <ul class="links">
-              <li><a href="http://api.rubyonrails.org/">Rails API</a></li>
-              <li><a href="http://stdlib.rubyonrails.org/">Ruby standard library</a></li>
-              <li><a href="http://corelib.rubyonrails.org/">Ruby core</a></li>
-              <li><a href="http://guides.rubyonrails.org/">Rails Guides</a></li>
-            </ul>
-          </li>
+          <h3>Other Links</h3>
+          <ul class="links">           
+            <li><a href="http://datamapper.org/">DataMapper</a></li>  
+            <li><a href="http://www.rubyonrails.org/">Ruby on Rails</a></li>
+          </ul>
+        </li>          
+          
         </ul>
+        <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" alt="Powered by Google App Engine" />
       </div>
 
       <div id="content">
@@ -242,7 +245,7 @@
         </div>
 
         <div id="about">
-          <h3><a href="rails/info/properties" onclick="about(); return false">About your application&rsquo;s environment</a></h3>
+          <h3><a href="rails/info/properties" onclick="about(); return false">About this application&rsquo;s environment</a></h3>
           <div id="about-content" style="display: none"></div>
         </div>
         
@@ -252,19 +255,26 @@
           
           <ol>          
             <li>
-              <h2>Use <tt>script/generate</tt> to create your models and controllers</h2>
-              <p>To see all available options, run it without parameters.</p>
-            </li>
-            
-            <li>
-              <h2>Set up a default route and remove or rename this file</h2>
-              <p>Routes are set up in config/routes.rb.</p>
+              <h2>Check out the <a href="http://rails-depot.appspot.com/">Rails Primer</a></h2>
+              <p>To create your app with either <a href="http://gist.github.com/268192">DataMapper</a> or <a href="http://gist.github.com/269075">TinyDS</a></p> 
+              
             </li>
 
             <li>
-              <h2>Create your database</h2>
-              <p>Run <tt>rake db:migrate</tt> to create your database. If you're not using SQLite (the default), edit <tt>config/database.yml</tt> with your username and password.</p>
+              <h2>For this App</h2>
+              <p>Go to the <a href="/contacts">Contacts</a> page to see the demo created from the <a href="http://gist.github.com/268192">DataMapper Gist</a>.</p>
+              <p>The code is slightly modified to add JSON support for the Contacts RESTful controller and is consumed by the <a href="http://github.com/freshblocks/iPhone-JSON-Client">iPhone App client</a>.</p>
             </li>
+
+            <li>
+              <h2>Alternatively, test with Browser plug-ins</h2>
+              <p><a href="https://addons.mozilla.org/en-US/firefox/addon/9780">RESTClient for Firefox</a> | <a href="https://chrome.google.com/extensions/detail/fhjcajmcbmldlhcimfajhfbgofnpcjmb">RESTClient for Google Chrome</a></p>
+            </li>
+            <li>
+              <h2>More details coming soon.</h2>
+              <p>A more formal write-up is in the works explaining the changes and testing involved in making this RESTful JSON provider.</p>
+            </li>
+            
           </ol>
         </div>
       </div>
