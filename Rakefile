@@ -6,12 +6,4 @@ require(File.join(File.dirname(__FILE__), 'config', 'boot'))
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
-
 require 'tasks/rails'
-
-# for Apple Push Notifications
-#begin
-#  require 'apn_on_rails_tasks'
-#rescue MissingSourceFile => e
-#  puts e.message
-#end

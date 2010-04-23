@@ -1,5 +1,3 @@
-#require 'dm-validations'
-
 class Contact
   include DataMapper::Resource
   

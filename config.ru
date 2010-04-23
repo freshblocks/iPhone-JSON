@@ -3,9 +3,7 @@ require 'appengine-apis/urlfetch'
 require 'cgi'
 require 'json'
 require 'dm-core'
-#require 'dm-more'
 require 'dm-serializer'
-#require 'apn_on_rails'
 
 AppEngine::Rack.configure_app(
     :application => 'iphone-json',
